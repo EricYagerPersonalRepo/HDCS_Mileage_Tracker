@@ -10,6 +10,11 @@
       "StackName": "amplify-hdcsmileagetracker-dev-171507",
       "StackId": "arn:aws:cloudformation:us-east-1:179682925980:stack/amplify-hdcsmileagetracker-dev-171507/7dbf89d0-de62-11ee-9a0e-0a30de7a78df",
       "AmplifyAppId": "d2ttknsvgn3b8u"
+    },
+    "categories": {
+      "auth": {
+        "hdcsmileagetrackerb2e23a78": {}
+      }
     }
   }
 }
