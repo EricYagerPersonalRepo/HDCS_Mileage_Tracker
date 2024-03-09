@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hdcsmileagetracker-dev-171507-authRole",
+      "UnauthRoleArn": "arn:aws:iam::179682925980:role/amplify-hdcsmileagetracker-dev-171507-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::179682925980:role/amplify-hdcsmileagetracker-dev-171507-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hdcsmileagetracker-dev-171507-deployment",
+      "UnauthRoleName": "amplify-hdcsmileagetracker-dev-171507-unauthRole",
+      "StackName": "amplify-hdcsmileagetracker-dev-171507",
+      "StackId": "arn:aws:cloudformation:us-east-1:179682925980:stack/amplify-hdcsmileagetracker-dev-171507/7dbf89d0-de62-11ee-9a0e-0a30de7a78df",
+      "AmplifyAppId": "d2ttknsvgn3b8u"
+    }
+  }
+}

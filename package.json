@@ -1,0 +1,20 @@
+{
+  "name": "hdcs_mileage_tracker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Eric Yager, MBA MS",
+  "license": "ISC",
+  "devDependencies": {
+    "@aws-sdk/client-lambda": "^3.529.1",
+    "@types/node": "^20.11.25",
+    "aws-sdk": "^2.1574.0",
+    "typescript": "^5.4.2"
+  }
+}
