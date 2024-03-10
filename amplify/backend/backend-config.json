@@ -1,4 +1,37 @@
 {
+  "api": {
+    "hdcsmileagetracker": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "hdcsmileagetrackerb2e23a78"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authhdcsmileagetrackerb2e23a78"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "hdcsmileagetrackerb2e23a78": {
       "customAuth": false,
@@ -25,6 +58,64 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "S3Trigger684e31bd": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_S3Trigger684e31bd_awsAppsyncApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger684e31bd"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Trigger684e31bd_awsAppsyncGraphqlEndpoint": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger684e31bd"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Trigger684e31bd_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger684e31bd"
+        }
+      ]
+    },
+    "AMPLIFY_function_S3Trigger684e31bd_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger684e31bd"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "hdcsImageBucket": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "S3Trigger684e31bd"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

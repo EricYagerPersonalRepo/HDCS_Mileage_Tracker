@@ -1,13 +1,64 @@
 import Head from 'next/head';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { uploadData } from 'aws-amplify/storage'
+import { generateClient } from 'aws-amplify/api'
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import {onCreateDetectedText} from '../src/graphql/customSubscriptions'
+import { listDetectedTexts } from '@/src/graphql/queries';
 
-export default function Home() {
+const client = generateClient()
+
+function Home() {
+    const [text, setText] = useState("")
     const fileInputRef = useRef(null);
 
     const handleOpenCamera = () => {
         const inputRef:any = fileInputRef.current
         inputRef.click();
     };
+
+    useEffect(()=>{
+        const listTexts = async() => {
+            const call = await  client.graphql({query: listDetectedTexts})
+            console.log(call)
+        }
+        const createSub = client.graphql({ query: onCreateDetectedText }).subscribe({
+            next: (event: any) => setText(event.data.onCreateDetectedText.text),
+            error: (error:any) => console.warn(error)
+        })
+
+        listTexts()
+        return () => {
+            createSub.unsubscribe()
+        }
+    },[])
+    
+
+    const handleFileChange = async (event:any) => {
+        const files = event.target.files;
+        const file = files[0];
+        if (!file) return;
+        alert(event.target.files[0].name)
+    
+        try {
+            const fileName = `documents/${Date.now()}-${file.name}`;
+    
+            try {
+                const result = await uploadData({
+                    key: fileName,
+                    data: file,
+                    options: {
+                        accessLevel: 'private', 
+                    }
+                }).result;
+                console.log('Succeeded: ', result);
+            } catch (error) {
+                console.log('Error : ', error);
+            }
+        } catch (error) {
+            console.error('Error uploading file:', error);
+        }
+    }
 
     return (
         <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 dark:bg-gray-900">
@@ -37,14 +88,13 @@ export default function Home() {
                 type="file"
                 accept="image/*"
                 capture="environment"
-                onChange={(event) => {
-                    // Handle the file input change event here
-                    // For example, you could set the file to state or immediately upload it
-                    console.log(event.target.files);
-                }}
+                onChange={handleFileChange}
                 ref={fileInputRef}
                 className="hidden"
             />
+            </div>
+            <div>
+                {text}
             </div>
         </main>
 
@@ -62,3 +112,5 @@ export default function Home() {
         </div>
     );
 }
+
+export default withAuthenticator(Home)

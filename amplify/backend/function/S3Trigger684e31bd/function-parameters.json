@@ -1,0 +1,12 @@
+{
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "awsAppsyncApiKey",
+      "environmentVariableName": "aws_appsync_apiKey"
+    },
+    {
+      "cloudFormationParameterName": "awsAppsyncGraphqlEndpoint",
+      "environmentVariableName": "aws_appsync_graphqlEndpoint"
+    }
+  ]
+}

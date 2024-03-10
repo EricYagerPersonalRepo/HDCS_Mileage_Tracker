@@ -1,0 +1,14 @@
+{
+  "resourceName": "hdcsImageBucket",
+  "policyUUID": "708d7ba3",
+  "bucketName": "hdcs-image-bucket",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Trigger684e31bd",
+  "groupAccess": {}
+}

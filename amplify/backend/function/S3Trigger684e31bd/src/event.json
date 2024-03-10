@@ -1,0 +1,38 @@
+{
+  "Records": [
+      {
+          "eventVersion": "2.1",
+          "eventSource": "aws:s3",
+          "awsRegion": "us-east-1",
+          "eventTime": "2024-03-10T14:02:40.487Z",
+          "eventName": "ObjectCreated:Put",
+          "userIdentity": {
+              "principalId": "AWS:AROASTVPP3WOOAXSLMDCE:CognitoIdentityCredentials"
+          },
+          "requestParameters": {
+              "sourceIPAddress": "69.129.146.237"
+          },
+          "responseElements": {
+              "x-amz-request-id": "37BBN1CR99ZXN5PT",
+              "x-amz-id-2": "+lOJpZKzMu8zoZ+XuY5ZIA9NfrTEMdKiS2alnd2/X7/uzbEvpuo7zlRlAJsmu9Qvmb/bCgWp/1jByAYnNGILWvLdiZGny1/nyfB647nSFFE="
+          },
+          "s3": {
+              "s3SchemaVersion": "1.0",
+              "configurationId": "OGE3YzdhMzQtNzdhNy00MjZkLWJkZDMtNzE4MTM3NzYwYTY2",
+              "bucket": {
+                  "name": "hdcs-image-bucket171507-dev",
+                  "ownerIdentity": {
+                      "principalId": "A2B7D7U7J2V2L5"
+                  },
+                  "arn": "arn:aws:s3:::hdcs-image-bucket171507-dev"
+              },
+              "object": {
+                  "key": "private/us-east-1%3A29d5efdd-9cb9-cd47-bf82-6ba9e2f9de8b/documents/1710079358941-image.jpg",
+                  "size": 1794093,
+                  "eTag": "9fa16ef413206f2e3da28ac6b401c8b9",
+                  "sequencer": "0065EDBD805BE7E392"
+              }
+          }
+      }
+  ]
+}

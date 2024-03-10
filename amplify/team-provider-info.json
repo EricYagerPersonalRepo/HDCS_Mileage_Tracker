@@ -14,6 +14,20 @@
     "categories": {
       "auth": {
         "hdcsmileagetrackerb2e23a78": {}
+      },
+      "function": {
+        "S3Trigger684e31bd": {
+          "deploymentBucketName": "amplify-hdcsmileagetracker-dev-171507-deployment",
+          "s3Key": "amplify-builds/S3Trigger684e31bd-6a614456457976313662-build.zip",
+          "awsAppsyncApiKey": "da2-5abe56vqnrhnhmp7usx2ci23vy",
+          "awsAppsyncGraphqlEndpoint": "https://6ksk6fiiwvaapbznd4cpkmmtmm.appsync-api.us-east-1.amazonaws.com/graphql"
+        }
+      },
+      "storage": {
+        "hdcsImageBucket": {}
+      },
+      "api": {
+        "hdcsmileagetracker": {}
       }
     }
   }
