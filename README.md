@@ -1,6 +1,6 @@
 # HDCS_Mileage_Tracker
 
-This application will automate the scanning and parsing of Excel data using Tesseract OSS so Eric2 can free up time to do other, more important, things.
+This application will automate the scanning and parsing of Excel data using Amazon Rekognition so Eric2 can free up time to do other, more important, things.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
